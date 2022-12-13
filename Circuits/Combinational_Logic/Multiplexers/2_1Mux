@@ -1,0 +1,29 @@
+module top_module( 
+    input a, b, sel,
+    output out ); 
+
+    // Method 1
+    always@(*)
+        begin
+            if(!sel)
+                out = a;
+            else
+                out = b;
+        end
+    
+    //Method 2 : out = sel ? b : a;
+    
+    /*
+    method 3 : 
+    always@(*)
+    begin
+    	case{sel}
+        	1'b1 : out = b;
+            1'b0 : out = a;
+        endcase
+    end
+             
+        */
+    
+endmodule
+s
